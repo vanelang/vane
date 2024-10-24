@@ -1,18 +1,18 @@
 cmake_minimum_required(VERSION 3.30)
 
 # Set project name and languages
-project(vale C CXX)
+project(vane C CXX)
 
 # Set build type
 set(CMAKE_BUILD_TYPE "Debug" CACHE STRING
     "Choose the type of build, options are: Debug, Release, RelWithDebInfo, MinSizeRel." FORCE)
 
-# Specify Vale version
-set(VALE_VERSION_MAJOR 0)
-set(VALE_VERSION_MINOR 0)
-set(VALE_VERSION_PATCH 0)
-set(VALE_VERSION "${VALE_VERSION_MAJOR}.${VALE_VERSION_MINOR}.${VALE_VERSION_PATCH}")
-message("Configuring Vale version ${VALE_VERSION}!")
+# Specify vane version
+set(VANE_VERSION_MAJOR 0)
+set(VANE_VERSION_MINOR 0)
+set(VANE_VERSION_PATCH 0)
+set(VANE_VERSION "${VANE_VERSION_MAJOR}.${VANE_VERSION_MINOR}.${VANE_VERSION_PATCH}")
+message("Configuring vane version ${VANE_VERSION}!")
 
 # Set module path for custom CMake modules
 set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake ${CMAKE_MODULE_PATH})
@@ -30,7 +30,7 @@ include_directories(
 )
 
 # Set source files
-set(VALE_SOURCES
+set(VANE_SOURCES
   "${CMAKE_SOURCE_DIR}/src/main.cpp"
 )
 
@@ -50,19 +50,19 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++ -std=c++11")
 set(CMAKE_OSX_ARCHITECTURES "arm64")
 
 # Add executable target
-add_executable(vale ${VALE_SOURCES})
+add_executable(vane ${VANE_SOURCES})
 
 # Set target properties
-set_target_properties(vale PROPERTIES
+set_target_properties(vane PROPERTIES
   LINKER_LANGUAGE CXX
   COMPILE_FLAGS ${EXE_CFLAGS}
 )
 
 # Link LLVM libraries and libc++
-target_link_libraries(vale LINK_PUBLIC
+target_link_libraries(vane LINK_PUBLIC
   ${LLVM_LIBRARIES}
   c++
 )
 
 # Installation rule
-install(TARGETS vale DESTINATION bin)
+install(TARGETS vane DESTINATION bin)

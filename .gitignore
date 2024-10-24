@@ -8,7 +8,7 @@ Makefile
 config.h
 
 # Executable files
-vale
+vane
 
 # Build directory 
 build/
