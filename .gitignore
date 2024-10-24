@@ -1,0 +1,21 @@
+# CMake-generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# Config file generated during the build
+config.h
+
+# Executable files
+vale
+
+# Build directory 
+build/
+
+# VSCode-specific directory
+.vscode/
+
+# IDE or editor metadata 
+*.swp
+*.swo
