@@ -61,7 +61,6 @@ set_target_properties(vane PROPERTIES
 # Link LLVM libraries and libc++
 target_link_libraries(vane LINK_PUBLIC
   ${LLVM_LIBRARIES}
-  c++
 )
 
 # Installation rule
